@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "one-liner-joke": "^1.2.2"
+  },
+  "name": "l-4",
+  "version": "1.0.0",
+  "description": "NPM Basics & Advanced Features | Backend Development Part 3",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}

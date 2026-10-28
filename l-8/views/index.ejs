@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>homepage of notes app | create notes</title>
+</head>
+
+<body>
+    <div class="main">
+        <div class="form">
+            <form action="/create" method="post">
+                <input type="text" placeholder="title goes here" name="title">
+                <br>
+                <textarea placeholder="write your task details" name="details"></textarea>
+                <br>
+                <input type="submit">
+            </form>
+        </div>
+
+        <div class="tasks">
+            <% if(files.length>0){ %>
+                <% files.forEach(function(val){ %>
+                    <div class="task">
+                        <h1><%= val %></h1>
+                        <a href="f/ile/<%= encodeURIComponent(val) %>">read more.</a>
+                        <!-- The encodeURIComponent() function in JavaScript converts special characters in a URL component (such as a query parameter or path segment) into UTF-8 escape sequences so they can be safely transmitted over the internet without breaking the structure of the URL. -->
+                        <a href="/edit/<%= encodeURIComponent(val) %>">Edit</a>
+                    </div>
+                <% }) %>
+            <% } else{ %>
+                <h3>no task yet.</h3>
+            <% } %>
+        </div>
+    </div>
+</body>
+
+</html>
