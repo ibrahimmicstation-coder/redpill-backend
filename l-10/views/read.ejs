@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
+
 <body>
     <div class="main">
         <div class="nav">
@@ -14,17 +16,20 @@
 
         <h1>All Users.</h1>
         <hr>
-        <div class="users">
-            <div class="user">
-                <img src="https://i.pinimg.com/736x/96/0e/62/960e62a54aead77ec7c86737c9e482b7.jpg" alt="">
-                <h3>salahuddin ayyubi</h1>
-                <h3>ayyubi@aqsa.com</h1>
-                    <div class="buttons">
-                        <a href="">edit user</a>
-                        <a href="">delete user</a>
+            <div class="users">
+                <% users.forEach(function(user){ %>
+                    <div class="user">
+                        <img src="<%=user.image%>" alt="">
+                        <h3><%=user.name%></h3>
+                            <h3><%=user.email%></h3>
+                            <div class="buttons">
+                            <a href="/edit/<%=user.id%>">edit user</a>
+                            <a href="/delete/<%=user.id%>">delete user</a>
+                        </div>
                     </div>
+                <% })%>
             </div>
-        </div>
     </div>
 </body>
+
 </html>
